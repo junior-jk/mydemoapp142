@@ -1,0 +1,108 @@
+Teste Mobile
+--> testes de aplicativos para celulares e tablets
+--> também de app para relogio, central de midia, smartv
+
+Vamos usar o framework Appium
+- Trabalha tanto Android como IOS
+- É uma vertente do Selenium WebDriver voltada para teste de app
+- Multiplos Sistemas Operacionais
+- Multiplas Linguagens de programação: C#, Java, JavaScript, Python
+
+Tipos de Aplicativos
+- WebApp (Site disfarçado de aplicativo)
+- Nativo - um projeto separado para Android e outro para IOS
+- Hibrido - um projeto gera apps para Android e IOS
+
+Requisitos de Hardware
+- Processador Intel i5 ou i7 (poderia i9)
+- Familia do processados 12-->2022, 13-->2023, 14-->2024
+- Memória RAM: 8 Gb --> 16 Gb (quanto mais melhor: 32 Gb)
+- Placa de Vídeo offboard
+- Disco Rigido: SSD (pelo menos o boot)
+
+Ambiente de Teste em Nuvem = Device Farms
+- SauceLabs --> Vamos criar uma conta
+- BrowserStack
+- Perfecto
+
+Ambientes de teste
+- Em um aparelho de celular, conectado a um computador/notebook por um cabo USB
+  (Precisa colocar o seu aparelho em modo desenvolvedor - consulte no Youtube)
+- Emulador instalado no seu computador/notebook (é um tipo de VM)
+- Device Farms, que pode ter tanto aparelhos fisicos quanto emulador
+
+Compatibilidade com Android e IOS
+- Computadores com Windows ou Linux, sejam com processadores Intel ou AMD só serve
+  como ambiente para Android por emulador (consegue pela device farm ou se tiver um iPhone)
+- Macbook ou computador Mac podem conectar ou emular tanto Android como IOS
+- Existe um procedimento descrito na Internet para criar uma VM de MacOS para rodar Windows
+
+Existem 2 softwares chamados Appium:
+- Appium Desktop (também de Appium Server) que é um gerenciador de automação de aplicativos
+  Precisamos quando vamos testar em um aparelho fisico ou emulador direto no nosso computador
+  (seria o motor por tras de uma device farm)
+- Appium Inspector que serve para inspecionar os elementos de um app
+
+O deviceName (nome do aparelho) em um emulador ou aparelho fisico é sempre emulator5553.
+Você pode ligar vários aparelhos ou emuladores ao mesmo tempo, eles vão se chamar:
+emulator5554, emulator5555 e assim por diante
+
+Roteiro de Inspeção
+- Instalar o app alvo e o Apk Info
+- Usar o Apk Info para descobrir:
+appPackage: com.saucelabs.mydemoapp.android
+appActivity: com.saucelabs.mydemoapp.android.view.activities.SplashActivity
+ou com.saucelabs.mydemoapp.android.view.activities.MainActivity
+- Baixar e instalar o Appium Inspector
+- Configurar o Appium Inspector para acessar o app no SauceLabs com as informaçõe do Apk Info
+- Usar o Appium Inspector para mapear os elementos e exportar o script de teste
+
+1 - Listas
+> Selenium WebDriver com Cucumber
+Falta:
+- Selenium WebDriver com Page Object
+- Appium Simples
+
+2 - Projetos Finais
+- Planejamento e Analise
+- Teste de Unidade
+- Teste de API 
+- Teste Web
+- Teste Mobile
+
+Nota final do curso é uma média das listas + projetos Finais
+O alvo é a média 8,0 ou superior
+
+- Squads de Teste
+> Critério de Participação é a média 8,0
+> Ideal: entregar todas as listas e os projetos finais até 13/jan
+
+- Suporte
+> continua, normal de segunda a sexta, das 10h às 18h
+
+- Certificados
+2 tipos:
+> participação (sem nota) - vamos configurar até sexta e avisar no grupo
+> conclusão (com nota)
+
+- 2025
+> Projetos QA ao vivo - segundas - 20:00 as 22:00 (fazer junto)
+                                22:00 as 22:30 (ajuda para quem não rodou)
+  Cada projeto vai levar 4 segundas
+
+> Agenda a confirmar (quartas ou quintas)
+  Fevereiro: Formação em Requisitos - 12 semanas
+  Abril: Formação em Desenvolvimento BackEnd - 12 semanas
+  Junho: Formação em Inteligência Artificial - 12 semanas
+  Agosto: Formação em Desenvolvimento FrontEnd - 12 semanas
+
+- Renovação
+> 12x R$ 70,00 ou R$ 700,00 (até 31/12/2025)
+
+
+
+
+"https://cardoso:3b2d740d-8cdf-459e-ab8d-6a79aa895b36@ondemand.us-west-1.saucelabs.com:443/wd/hub"
+
+mvn clean test -Dsurefire.includeJUnit5Engines=cucumber -Dcucumber.features="src/test/resources/features" -Dcucumber.glue="steps"
+
